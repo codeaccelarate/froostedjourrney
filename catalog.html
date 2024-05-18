@@ -212,7 +212,8 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        let currentPage = 1;
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentPage = parseInt(urlParams.get('page')) || 1;
         const productsPerPage = 9;
         let catalogData = [];
 
