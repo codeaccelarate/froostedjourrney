@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog</title>
+    <!-- Material UI CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Daisy UI CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@1.14.1/dist/full.css"
+      rel="stylesheet"
+    />
+    <!-- Animate.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Magic Animations -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css"
+    />
+    <style>
+      /* Custom styles for the catalog */
+      /* Add your custom styles here */
+      .catalog-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        padding: 20px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .product-card {
+        width: 30%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        height: 460px;
+      }
+
+      .sidenav {
+        padding-top: 30px;
+      }
+
+      .sidenav li a {
+        color: #fff;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 320px;
+        margin-bottom: 20px;
+      }
+
+      .card-content {
+        text-transform: capitalize;
+        padding: 20px 10px;
+        text-align: left;
+      }
+
+      /* Media query for responsive layout */
+      @media (max-width: 768px) {
+        .product-card {
+          width: 45%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .product-card {
+          width: 100%;
+        }
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 40px;
+        margin: 20px 0;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 30px;
+        margin: 20px 0;
+      }
+
+      @media (max-width: 768px) {
+        .sidenav {
+          width: 50%;
+        }
+        .nav-wrapper .brand-logo {
+          font-size: 16px;
+        }
+        .page-footer p {
+          margin-bottom: 8px;
+        }
+      }
+
+      .pagination {
+        margin-bottom: 20px;
+      }
+
+      .pagination button:first-child {
+        margin-right: 25px;
+      }
+
+      .page-footer h3 {
+        font-size: 20px;
+      }
+      .page-footer p,
+      .page-footer a {
+        font-size: 16px;
+      }
+      .loading {
+        width: 50px;
+        height: 50px;
+        border: 6px solid #fff;
+        border-top-color: black;
+        outline: 1px solid #FFF;
+        border-radius: 50%;
+        animation: spinner 0.6s linear infinite;
+      }
+
+      @keyframes spinner {
+        0% {
+            transform: rotate(120deg);
+        }
+        50% {
+            transform: rotate(240deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav-wrapper blue">
+      <div class="container">
+        <a href="#" class="brand-logo">Froosted Jourrney</a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Mobile Navigation -->
+    <ul class="sidenav blue lighten-1" id="mobile-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="catalog.html">Catalog</a></li>
+    </ul>
+
+    <div class="container">
+      <h1>Froosted Jourrney</h1>
+      <h3>Catalog</h3>
+    </div>
+
+    <!-- Catalog Container -->
+    <div class="catalog-container">
+      <!-- Product Cards will be dynamically generated here -->
+    </div>
+    <div class="pagination center-align">
+      <button class="btn next-page" id="prevBtn" disabled>Previous</button>
+      <button class="btn next-page" id="nextBtn">Next</button>
+    </div>
+    <div class="pagination center-align" id="paginationLinks">
+      <!-- Page numbers will be dynamically generated here -->
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- GSAP Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+
+    <script>
+      // Initialize the sidenav
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".sidenav");
+        var instances = M.Sidenav.init(elems);
+      });
+      // GSAP animations
+      gsap.from(".card-title", { duration: 1, y: -50, opacity: 0 });
+      gsap.from(".card p", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Materialize Initialization
+        M.AutoInit();
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let currentPage = 1;
+        const productsPerPage = 9;
+        let catalogData = [];
+
+        fetchCatalogData();
+
+        function fetchCatalogData() {
+          // Show loading spinner/text
+          const catalogContainer = document.querySelector(".catalog-container");
+          catalogContainer.innerHTML = '<div class="loading">Loading...</div>';
+
+          fetch("catalog.csv")
+            .then((response) => response.text())
+            .then((data) => {
+              catalogData = parseCSV(data);
+              renderCatalog(currentPage);
+            })
+            .catch((error) =>
+              console.error("Error fetching catalog data:", error)
+            );
+        }
+
+        function parseCSV(data) {
+          const lines = data.trim().split("\n");
+          const headers = lines[0].split(",");
+          return lines.slice(1).map((line) => {
+            const values = line.split(",");
+            return headers.reduce((object, header, index) => {
+              object[header.trim()] = values[index].trim();
+              return object;
+            }, {});
+          });
+        }
+
+        async function renderCatalog(page) {
+            const catalogContainer = document.querySelector(".catalog-container");
+            catalogContainer.innerHTML = '<div class="loading"></div>';
+          await setTimeout(() => {
+          catalogContainer.innerHTML = ""; // Clear previous products
+
+          const startIndex = (page - 1) * productsPerPage;
+          const endIndex = startIndex + productsPerPage;
+          const productsToShow = catalogData.slice(startIndex, endIndex);
+
+          productsToShow.forEach((product) => {
+            const card = document.createElement("div");
+            card.classList.add("product-card");
+
+            const image = document.createElement("img");
+            image.classList.add("product-image");
+            image.src = "Cakes/" + product.sno + ".jpg";
+            image.alt = product.name;
+            card.appendChild(image);
+
+            const details = document.createElement("div");
+            details.classList.add("card-content");
+            details.innerHTML = `
+                <span class="card-title">${product.name}</span>
+                <p>Quantity: ${product.quantity}</p>
+                <p>Price: ${product.price}</p>
+            `;
+            card.appendChild(details);
+
+            catalogContainer.appendChild(card);
+          });
+          }, 500);
+
+          // Update page number link in the address
+          window.history.replaceState(null, null, `?page=${page}`);
+
+          // Update page number in the heading
+          document.querySelector("h3").innerHTML = `Catalog (Page ${page})`;
+
+          // Disable/Enable Prev and Next buttons based on current page
+          const prevBtn = document.getElementById("prevBtn");
+          const nextBtn = document.getElementById("nextBtn");
+
+          prevBtn.disabled = page === 1;
+          nextBtn.disabled =
+            page === Math.ceil(catalogData.length / productsPerPage);
+        }
+
+        document.getElementById("nextBtn").addEventListener("click", () => {
+          if (currentPage < Math.ceil(catalogData.length / productsPerPage)) {
+            currentPage++;
+            renderCatalog(currentPage);
+          }
+        });
+
+        document.getElementById("prevBtn").addEventListener("click", () => {
+          if (currentPage > 1) {
+            currentPage--;
+            renderCatalog(currentPage);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
