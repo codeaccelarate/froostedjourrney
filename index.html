@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="logo.ico">
     <!-- Material UI CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
-     <!-- Material Icons -->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Daisy UI CSS -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.1/dist/full.css" rel="stylesheet">
     <!-- Animate.css -->
@@ -24,6 +24,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            color: white;
             text-align: center;
             overflow: hidden;
         }
@@ -49,13 +50,23 @@
           padding: 10px 20px;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 600px) {
         .hero {
             background-image: url('hero-mobile.png'); /* Change this to your mobile background image */
         }
     }
+    @media (max-width: 325px) {
+        .hero {
+            background-image: url('hero-mobile320.png'); /* Change this to your mobile background image */
+        }
+    }
 
-        @media (max-width: 600px) {
+    @media and screen (max-width: 600px) {
+        .hero {
+            background-image: url('hero-mobile.png'); /* Change this to your mobile background image */
+        }
+    }
+    @media and screen (max-width: 325px) {
         .hero {
             background-image: url('hero-mobile320.png'); /* Change this to your mobile background image */
         }
@@ -86,7 +97,7 @@
             padding: 20px;
             text-align: justify;
         }
-        .about-section h2 {
+        .about h2 {
             color: #ff4081;
             font-size: 36px;
             margin-bottom: 8px;
@@ -138,7 +149,6 @@
           .page-footer p,.page-footer a {
             font-size: 16px;
           }
-        
     </style>
 </head>
 <body>
@@ -172,51 +182,49 @@
         </div>
     </div>
 
-    <!-- About Section -->
-<section id="about" class="about-section">
-  <div class="container">
-    <center>
-      <h2 class="animate__animated animate__fadeInUp">About Us</h2>
-    </center>
-      <div class="row about-content">
-          <div class="col s12 m6 about-image">
-            <img src="logo.jpeg" alt="logo" style="border-radius: 50%;">
+    <section id="about" class="about section lighten-4">
+        <div class="container">
+            <h2 class="center-align animate__animated animate__fadeInUp">About</h2>
+            
+            <div class="row about-content">
+                <div class="col s12 m6 about-image">
+                  <img src="logo.jpeg" alt="logo" style="border-radius: 50%;">
+                </div>
+                <div class="col s12 m6 about-text">
+                    <p class="flow-text animate__animated animate__fadeInLeft">At Froosted Jourrney, we believe in making every celebration unforgettable with our delectable cakes. We partner with top local bakeries across India to deliver freshly baked cakes to your doorstep within a day. Whether it's a birthday, wedding, or any special occasion, our wide variety of cakes, including custom orders, ensure that your moments are filled with sweetness and joy.</p>
+                    <p class="flow-text animate__animated animate__fadeInLeft">Our mission is to provide exceptional service and high-quality cakes that meet your expectations. With Froosted Jourrney, you can trust that your cake will arrive on time, beautifully presented, and ready to be enjoyed.</p>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m4">
+                  <div class="icon-block">
+                      <h2 class="center light-blue-text"><i class="material-icons">cake</i></h2>
+                      <h5 class="center">Variety of Cakes</h5>
+                      <p class="light">We offer a wide range of cakes for every occasion. From classic flavors to exotic varieties, we have something for everyone.</p>
+                  </div>
+              </div>
+              <div class="col s12 m4">
+                  <div class="icon-block">
+                      <h2 class="center light-blue-text"><i class="material-icons">local_shipping</i></h2>
+                      <h5 class="center">Fast Delivery</h5>
+                      <p class="light">Our efficient delivery system ensures that your cake arrives fresh and on time, every time.</p>
+                  </div>
+              </div>
+              <div class="col s12 m4">
+                  <div class="icon-block">
+                      <h2 class="center light-blue-text"><i class="material-icons">favorite</i></h2>
+                      <h5 class="center">Custom Orders</h5>
+                      <p class="light">Need a custom cake? We've got you covered. Our bakers can create personalized cakes to match your specifications.</p>
+                  </div>
+              </div>
           </div>
-          <div class="col s12 m6 about-text light-black-text">
-              <p class="flow-text animate__animated animate__fadeInLeft">At Froosted Jourrney, we believe in making every celebration unforgettable with our delectable cakes. We partner with top local bakeries across India to deliver freshly baked cakes to your doorstep within a day. Whether it's a birthday, wedding, or any special occasion, our wide variety of cakes, including custom orders, ensure that your moments are filled with sweetness and joy.</p>
-              <p class="flow-text animate__animated animate__fadeInLeft">Our mission is to provide exceptional service and high-quality cakes that meet your expectations. With Froosted Jourrney, you can trust that your cake will arrive on time, beautifully presented, and ready to be enjoyed.</p>
-          </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m4">
-            <div class="icon-block">
-                <h2 class="center light-blue-text"><i class="material-icons">cake</i></h2>
-                <h5 class="center black-text">Variety of Cakes</h5>
-                <p class="light-black-text">We offer a wide range of cakes for every occasion. From classic flavors to exotic varieties, we have something for everyone.</p>
-            </div>
         </div>
-        <div class="col s12 m4">
-            <div class="icon-block">
-                <h2 class="center light-blue-text"><i class="material-icons">local_shipping</i></h2>
-                <h5 class="center black-text">Fast Delivery</h5>
-                <p class="light-black-text">Our efficient delivery system ensures that your cake arrives fresh and on time, every time.</p>
-            </div>
-        </div>
-        <div class="col s12 m4">
-            <div class="icon-block">
-                <h2 class="center light-blue-text"><i class="material-icons">favorite</i></h2>
-                <h5 class="center black-text">Custom Orders</h5>
-                <p class="light-black-text">Need a custom cake? We've got you covered. Our bakers can create personalized cakes to match your specifications.</p>
-            </div>
-        </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="services section light-blue lighten-4">
+    <section id="service" class="services section light-blue lighten-2">
         <div class="container">
-            <h2 class="center-align animate__animated animate__fadeInLeft black-text">Our Services</h2>
+            <h2 class="center-align animate__animated animate__fadeInLeft">Our Services</h2>
             <div class="row">
                 <div class="col s12 m6 l4">
                     <div class="card">
@@ -225,7 +233,7 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title black-text">Birthday Cakes</span>
-                            <p class="light-black-text">Delicious layered cakes perfect for birthday celebrations, delivered fresh and on time.</p>
+                            <p class="black-text lighten-2">Delicious layered cakes perfect for birthday celebrations, delivered fresh and on time.</p>
                         </div>
                     </div>
                 </div>
@@ -236,7 +244,7 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title black-text">Wedding Cakes</span>
-                            <p class="light-black-text">Elegant and beautiful wedding cakes that will make your special day even more memorable.</p>
+                            <p class="black-text lighten-2">Elegant and beautiful wedding cakes that will make your special day even more memorable.</p>
                         </div>
                     </div>
                 </div>
@@ -247,11 +255,10 @@
                         </div>
                         <div class="card-content">
                             <span class="card-title black-text">Custom Orders</span>
-                            <p class="light-black-text">Personalized cakes tailored to your specifications, with high priority delivery and special messages.</p>
+                            <p class="black-text lighten-2">Personalized cakes tailored to your specifications, with high priority delivery and special messages.</p>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </section>
 
