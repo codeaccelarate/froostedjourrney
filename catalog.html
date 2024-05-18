@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalog</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
     <!-- Material UI CSS -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -261,7 +262,11 @@
 
             const image = document.createElement("img");
             image.classList.add("product-image");
-            image.src = "Cakes/" + product.sno + ".jpg";
+            if(product.sno <= 60) {
+                image.src = "Cakes1/" + product.sno + ".jpg";
+            } else {
+                image.src = "Cakes2/" + product.sno + ".jpg";
+            }
             image.alt = product.name;
             card.appendChild(image);
 
