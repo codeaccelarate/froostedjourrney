@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froosted Jourrney - Same Day Cake Delivery Across India</title>
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <!-- Material UI CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+     <!-- Material Icons -->
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Daisy UI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.1/dist/full.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Magic Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
+    <style>
+        .hero {
+            background-image: url('hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                background-size: fill;
+                background-repeat: no-repeat;
+            }
+        }
+        .custom-button {
+            background-color: #ff4081;
+        }
+        .card img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            aspect-ratio: 1;
+        }
+
+        .hero .container {
+          background: rgba(255, 255, 255, 0.7);
+          padding: 10px 20px;
+        }
+
+        @media (max-width: 600px) {
+        .hero {
+            background-image: url('hero-mobile.png'); /* Change this to your mobile background image */
+        }
+    }
+    @media (max-width: 325px) {
+        .hero {
+            background-image: url('hero-mobile320.png'); /* Change this to your mobile background image */
+        }
+    }
+
+        .hero .container p {
+          color: black;
+          font-size: 30px;
+          font-weight: 600;
+        }
+
+        .about-section {
+            padding: 50px 0;
+            background-color: #f9f9f9;
+        }
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .about-image {
+            flex: 1;
+            min-width: 240px;
+        }
+        .about-text {
+            flex: 2;
+            padding: 20px;
+            text-align: justify;
+        }
+        .about-section h2 {
+            color: #ff4081;
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        .services h2, .contacts h2 {
+          font-size: 36px;
+          margin-bottom: 8px;
+        }
+
+        .sidenav {
+          padding-top: 30px;
+        }
+
+        .sidenav li a {
+          color: #FFF;
+        }
+
+        .icon-block h5 {
+            font-size: 20px;
+            margin-bottom: 7px;
+        }
+
+        .icon-block p {
+            font-size: 16px;
+        }
+
+        .icon-block i {
+            margin-top: 10px;
+            font-size: 50px;
+        }
+
+        @media (max-width: 768px) {
+          .sidenav {
+            width: 50%;
+            
+          }
+          .nav-wrapper .brand-logo {
+            font-size: 16px;
+          }
+          .page-footer p {
+            margin-bottom: 8px;
+          }
+
+        }
+
+        .page-footer h3 {
+            font-size: 20px;
+          }
+          .page-footer p,.page-footer a {
+            font-size: 16px;
+          }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+<nav class="nav-wrapper blue">
+  <div class="container">
+      <a href="#" class="brand-logo">Froosted Jourrney</a>
+      <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+          <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+  </div>
+</nav>
+      <!-- Mobile Navigation -->
+      <ul class="sidenav blue lighten-1" id="mobile-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <p class="animate__animated animate__fadeInUp">Delivering Joy with Every Cake - Same Day Delivery Across India</p>
+            <a href="#order" class="btn-large waves-effect waves-light custom-button magic bounce">Order Now</a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <center>
+      <h2 class="animate__animated animate__fadeInUp">About Us</h2>
+    </center>
+      <div class="row about-content">
+          <div class="col s12 m6 about-image">
+            <img src="logo.jpeg" alt="logo" style="border-radius: 50%;">
+          </div>
+          <div class="col s12 m6 about-text">
+              <p class="flow-text animate__animated animate__fadeInLeft">At Froosted Jourrney, we believe in making every celebration unforgettable with our delectable cakes. We partner with top local bakeries across India to deliver freshly baked cakes to your doorstep within a day. Whether it's a birthday, wedding, or any special occasion, our wide variety of cakes, including custom orders, ensure that your moments are filled with sweetness and joy.</p>
+              <p class="flow-text animate__animated animate__fadeInLeft">Our mission is to provide exceptional service and high-quality cakes that meet your expectations. With Froosted Jourrney, you can trust that your cake will arrive on time, beautifully presented, and ready to be enjoyed.</p>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">cake</i></h2>
+                <h5 class="center">Variety of Cakes</h5>
+                <p class="light">We offer a wide range of cakes for every occasion. From classic flavors to exotic varieties, we have something for everyone.</p>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">local_shipping</i></h2>
+                <h5 class="center">Fast Delivery</h5>
+                <p class="light">Our efficient delivery system ensures that your cake arrives fresh and on time, every time.</p>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">favorite</i></h2>
+                <h5 class="center">Custom Orders</h5>
+                <p class="light">Need a custom cake? We've got you covered. Our bakers can create personalized cakes to match your specifications.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-blue lighten-4">
+        <div class="container">
+            <h2 class="center-align animate__animated animate__fadeInLeft">Our Services</h2>
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://wallpapers.com/images/hd/happy-birthday-cake-1600-x-1576-picture-42qlgckc441huvu4.jpg" alt="Birthday Cakes">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Birthday Cakes</span>
+                            <p>Delicious layered cakes perfect for birthday celebrations, delivered fresh and on time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://th.bing.com/th/id/R.9ed294dbb5e3a7e14852a06c82de21c0?rik=FRLYdOxiA3gMGg&riu=http%3a%2f%2fwww.cardinalbridal.com%2fwp-content%2fuploads%2f2014%2f03%2fwedding-cake-trends-2014.jpg&ehk=eawVa6B6UJpyIp7c8KwPNEYJ95%2fOg7nEuSXIcMYKvxw%3d&risl=&pid=ImgRaw&r=0" alt="Wedding Cakes">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Wedding Cakes</span>
+                            <p>Elegant and beautiful wedding cakes that will make your special day even more memorable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://i.pinimg.com/originals/1a/7c/8c/1a7c8c755a2af1d5753cb411efc6ca7b.jpg" alt="Custom Orders">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title">Custom Orders</span>
+                            <p>Personalized cakes tailored to your specifications, with high priority delivery and special messages.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contacts section lighten-4">
+      <div class="container">
+          <h2 class="center-align animate__animated animate__fadeInUp">Contact Us</h2>
+          <p class="flow-text center-align">Have questions or want to place an order? Get in touch with us!</p>
+          <div class="row">
+              <div class="col s12 m8 offset-m2">
+                  <form>
+                      <div class="input-field">
+                          <input id="name" type="text" class="validate">
+                          <label for="name">Name</label>
+                      </div>
+                      <div class="input-field">
+                          <input id="email" type="email" class="validate">
+                          <label for="email">Email</label>
+                      </div>
+                      <div class="input-field">
+                          <textarea id="message" class="materialize-textarea"></textarea>
+                          <label for="message">Message</label>
+                      </div>
+                      <button type="submit" class="btn waves-effect waves-light custom-button">Send Message</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h3 class="white-text">Froosted Jourrney</h3>
+                    <p class="grey-text text-lighten-3">Delivering Joy with Every Cake</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h3 class="white-text">Follow Us</h3>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/froostedjourrney/">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <center>
+                  © 2024 Froosted Jourrney. All rights reserved.
+                </center>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Materialize JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- GSAP Animation Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+<!-- Smooth Scroll Library -->
+<script src="https://cdn.jsdelivr.net/npm/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+<script>
+    // Initialize the sidenav
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.sidenav');
+        var instances = M.Sidenav.init(elems);
+    });
+        // GSAP animations
+        gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0 });
+        gsap.from(".hero p", { duration: 1, y: 50, opacity: 0, delay: 0.5 });
+        gsap.from(".hero .btn-large", { duration: 1, scale: 0.5, opacity: 0, delay: 1 });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 800,
+            offset: 60 // Adjust the offset as needed to account for fixed navigation bar height
+        });
+    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Materialize Initialization
+            M.AutoInit();
+        });
+    </script>
+</body>
+</html>
